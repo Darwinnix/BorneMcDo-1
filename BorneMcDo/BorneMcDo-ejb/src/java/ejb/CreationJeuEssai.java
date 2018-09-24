@@ -1,17 +1,18 @@
 package ejb;
 
 import entites.Article;
-import java.io.File;
+import java.io.Serializable;
 import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Singleton
-public class CreationJeuEssai implements CreationJeuEssaiLocal {
+public class CreationJeuEssai implements CreationJeuEssaiLocal, Serializable {
 
     @PersistenceContext(unitName = "BorneMcDo-ejbPU")
     private EntityManager em;
 
+    @Override
     public void creerDonnees() {
         Article cheeseBurger = new Article("Cheeseburger",
                 "Le « Cheese » pour les intimes", 

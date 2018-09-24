@@ -5,7 +5,7 @@ import entites.Choix;
 import entites.Disponibilite;
 import entites.InfoArticle;
 import entites.Ingredient;
-import entites.Option;
+import entites.Options;
 import entites.Promotion;
 import entites.SupplementArticle;
 import entites.SupplementAutre;
@@ -15,14 +15,14 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-09-23T20:28:09")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-09-24T22:50:34")
 @StaticMetamodel(Article.class)
 public class Article_ { 
 
     public static volatile SingularAttribute<Article, String> image;
     public static volatile CollectionAttribute<Article, InfoArticle> lesInfos;
     public static volatile SingularAttribute<Article, Float> prix;
-    public static volatile CollectionAttribute<Article, Option> lesOptions;
+    public static volatile CollectionAttribute<Article, Options> lesOptions;
     public static volatile SingularAttribute<Article, String> titre;
     public static volatile CollectionAttribute<Article, SupplementArticle> lesSupArt;
     public static volatile SingularAttribute<Article, String> description;

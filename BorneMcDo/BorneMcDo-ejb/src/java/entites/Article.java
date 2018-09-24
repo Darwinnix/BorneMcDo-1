@@ -31,7 +31,7 @@ public class Article implements Serializable {
     @OneToMany(mappedBy = "unArticle")
     private Collection<InfoArticle> lesInfos;
     @ManyToMany(mappedBy = "lesArticles")
-    private Collection<Option> lesOptions;
+    private Collection<Options> lesOptions;
     @ManyToMany(mappedBy = "lesArticles")
     private Collection<SupplementAutre> lesSuppAut;
     @ManyToMany(mappedBy = "lesArticles")
@@ -120,11 +120,11 @@ public class Article implements Serializable {
         this.lesInfos = lesInfos;
     }
 
-    public Collection<Option> getLesOptions() {
+    public Collection<Options> getLesOptions() {
         return lesOptions;
     }
 
-    public void setLesOptions(Collection<Option> lesOptions) {
+    public void setLesOptions(Collection<Options> lesOptions) {
         this.lesOptions = lesOptions;
     }
 

@@ -13,6 +13,7 @@ import java.util.List;
 import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 @Stateful
@@ -54,6 +55,17 @@ public class GestionCommande implements GestionCommandeLocal {
         tq.setParameter("paramChoix", comId);
         List<Choix> lch = tq.getResultList();
         return lch;
+    }
+    
+    @Override
+    public void updateCommandeLivree(Long comId){
+        Commande c = null;
+        Status s = null;
+        Query q= em.createNamedQuery("entites.Status.selectStatusByLibelle");
+        c = em.find(Commande.class, comId);
+        q.setParameter("paramStatusLib", "délivrée au client");
+        s = (Status) q.getSingleResult();
+        c.setUnStatus(s);
     }
 
     @Override

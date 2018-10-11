@@ -25,7 +25,9 @@
                             //<p class="suping">nappage chocolat</p>
                             //<p class="suping">sans cacahuète</p>
                         %>
-                        <a class="btn text-center btn-comlivre" href="Controller?section=ScCommande&ref=comLivree">Commande livrée</a>
+                        <div class="col-1 text-center boutonback">
+                            <a class="btn btn-comlivre" href="Controller?section=ScCommande&ref=comLivree&comId=${i.id}">Commande livrée</a>
+                        </div>
                     </div>
                 </c:forEach>
             </div>

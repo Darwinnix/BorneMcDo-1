@@ -32,6 +32,8 @@ public interface GestionCommandeLocal {
     public String genererIdCourt();
 
     public void creerCommande(List<Choix> lesChoix, String idCourt, Preference p);
+
+    public void updateCommandeLivree(Long comId);
     
     
 }

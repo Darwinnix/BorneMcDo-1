@@ -344,13 +344,17 @@ p{
     justify-content: space-around;
 }
 .btn-comlivre{
-    display: flex;
-    align-items: center;
+    
     background-color: #004812;
     color: white;
-    margin-bottom: -150%;
 }
 .btn-comlivre:hover{
     background-color: #00280a;
     color: white;
+}
+.boutonback{
+    position: absolute;
+    display: flex;
+    left: 15%;
+    bottom: 2%;
 }

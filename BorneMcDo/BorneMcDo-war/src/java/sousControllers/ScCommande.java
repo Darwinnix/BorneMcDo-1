@@ -98,6 +98,11 @@ public class ScCommande implements SousController {
         request.setAttribute("comEnPrepa", lesCom);
         System.out.println(">>>>>lescom = " + lesCom);
         
+        String comId = request.getParameter("comId");
+        if ("comLivree".equals(ref)) {
+            command.updateCommandeLivree(Long.valueOf(comId));
+        }
+        
         return url;
     }
 

@@ -140,7 +140,9 @@ public class Commande implements Serializable {
 
     @Override
     public String toString() {
-        return "Commande n°" + id + ", heure=" + heure + ", identifiantCourt=" + identifiantCourt;
+        return "Commande n° " + id + ", identifiantCourt=" + identifiantCourt + ", lesChoix=" + lesChoix;
     }
+
+ 
 
 }

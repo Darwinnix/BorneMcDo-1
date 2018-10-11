@@ -219,8 +219,8 @@ p{
 .btn-cadre-conf:hover{
     font-family: 'museo';
     text-transform: uppercase;
-    
-    
+
+
 }
 .btn-confirm{
     background-color: #004812;
@@ -235,7 +235,7 @@ p{
     background-color: #004812;
     color: white;
     margin-top: 150%;
-    
+
 }
 .btn-paiement:hover{
     background-color: #00280a;
@@ -255,14 +255,14 @@ p{
     border-color: #004812;
     border-radius: 5px;
     font-family: 'museo';
-    height: 260px;
+    height: 390px;
     text-transform: uppercase;
 }
 .titre{
     position: absolute;
     background-color: #004812;
     color: white;
-    top: -10%;
+    top: -7%;
     text-transform: uppercase;
     font-family: 'museo';
     left: 0;
@@ -273,7 +273,7 @@ p{
     font-weight: bold;
     line-height: 50%;
     margin-top: 1%;
-    
+
 }
 .article{
     line-height: 40%;
@@ -342,4 +342,15 @@ p{
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+.btn-comlivre{
+    display: flex;
+    align-items: center;
+    background-color: #004812;
+    color: white;
+    margin-bottom: -150%;
+}
+.btn-comlivre:hover{
+    background-color: #00280a;
+    color: white;
 }

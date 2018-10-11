@@ -18,7 +18,7 @@
                     <p class="col-12 sandwich">${nbSandwichs} SANDWICH<c:if test="${nbSandwichs > 1}">S</c:if></p><br/>
                     <c:forEach var="a" items="${sandwichs}">
                         <div class="col-2 artCom">
-                            <img src="${a.unArticle.image}" height="90px" width="109px"/>
+                            <img src="${a.unArticle.image}" height="90px"/>
                             ${a.unArticle.nom}
                         </div>
                     </c:forEach>
@@ -29,7 +29,7 @@
                     <p class="col-12 sandwich">${nbSalades} SALADE<c:if test="${nbSalades > 1}">S</c:if></p><br/></p><br/>
                     <c:forEach var="a" items="${salades}">
                         <div class="col-2 artCom">
-                            <img src="${a.unArticle.image}" height="90px" width="109px"/>
+                            <img src="${a.unArticle.image}" height="90px"/>
                             ${a.unArticle.nom}
                         </div>
                     </c:forEach>
@@ -40,7 +40,7 @@
                     <p class="col-12 sandwich">${nbFrites} FRITE<c:if test="${nbFrites > 1}">S</c:if></p><br/>
                     <c:forEach var="a" items="${frites}">
                         <div class="col-2 artCom">
-                            <img src="${a.unArticle.image}" height="90px" width="109px"/>
+                            <img src="${a.unArticle.image}" height="90px"/>
                             ${a.unArticle.nom}
                         </div>
                     </c:forEach>
@@ -52,7 +52,7 @@
 
                     <c:forEach var="a" items="${boissons}">
                         <div class="col-2 artCom">
-                            <img src="${a.unArticle.image}" height="90px" width="109px"/>
+                            <img src="${a.unArticle.image}" height="90px"/>
                             ${a.unArticle.nom}
                         </div>
                     </c:forEach>
@@ -63,7 +63,7 @@
                     <p class="col-12 sandwich">${nbSauces} SAUCE<c:if test="${nbSauces > 1}">S</c:if></p><br/>
                     <c:forEach var="a" items="${sauces}">
                         <div class="col-2 artCom">
-                            <img src="${a.unArticle.image}" height="90px" width="109px"/>
+                            <img src="${a.unArticle.image}" height="90px"/>
                             ${a.unArticle.nom}
                         </div>
                     </c:forEach>
@@ -74,7 +74,7 @@
                     <p class="col-12 sandwich">${nbDesserts} DESSERT<c:if test="${nbDesserts > 1}">S</c:if></p><br/>
                     <c:forEach var="a" items="${desserts}">
                         <div class="col-2 artCom">
-                            <img src="${a.unArticle.image}" height="90px" width="109px"/>
+                            <img src="${a.unArticle.image}" height="90px"/>
                             ${a.unArticle.nom}
                         </div>
                     </c:forEach>
@@ -85,7 +85,7 @@
                     <p class="col-12 sandwich">${nbCadeaux} CADEAUX<c:if test="${nbCadeaux > 1}">S</c:if></p><br/>
                     <c:forEach var="a" items="${cadeaux}">
                         <div class="col-2 artCom">
-                            <img src="${a.unArticle.image}" height="90px" width="109px"/>
+                            <img src="${a.unArticle.image}" height="90px"/>
                             ${a.unArticle.nom}
                         </div>
                     </c:forEach>

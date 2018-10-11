@@ -13,18 +13,19 @@
         <div class="container-fluid">
 
             <div class="row test">
-                <c:forEach var="i" items="${comEnPrepa}">
-                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 control">
+                <c:forEach var="i" items="${comEnPrepa}" begin="0" end="9" step="1">
+                    <div class="col-xs-10 col-sm-3 col-md-3 col-lg-3 control">
                         <h4 class="col-sm-12 titre">commande ${i.identifiantCourt}</h4><br/>
                         <p class="heure"><fmt:formatDate value="${i.heure}" pattern="dd/MM/yyyy HH:mm:ss"/></p>
-                        <c:forEach var="a" items="${panier}">
-                            <p class="article"> ${a.unArticle.nom}</p>
-                        </c:forEach>
+                        <c:forEach var="c" items="${i.lesChoix}">
+                            <p class="article"> ${c.unArticle.nom}</p>
+                        </c:forEach>             
                         <%
-                        //<p class="suping"> sans oignon</p>
-                        //<p class="suping">nappage chocolat</p>
-                        //<p class="suping">sans cacahuète</p>
+                            //<p class="suping"> sans oignon</p>
+                            //<p class="suping">nappage chocolat</p>
+                            //<p class="suping">sans cacahuète</p>
                         %>
+                        <a class="btn text-center btn-comlivre" href="Controller?section=ScCommande&ref=comLivree">Commande livrée</a>
                     </div>
                 </c:forEach>
             </div>

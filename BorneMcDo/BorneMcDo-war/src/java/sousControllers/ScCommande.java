@@ -5,6 +5,7 @@ import ejb.GestionPanierLocal;
 import entites.Choix;
 import entites.Commande;
 import entites.Preference;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +26,6 @@ public class ScCommande implements SousController {
         request.setAttribute("comEnPrepa", lc);
         HttpSession session = request.getSession();
         Preference p = (Preference) session.getAttribute("prefConso");
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> Preference = " + p);
         String ref = request.getParameter("ref");
         if (ref == null) {
             url = "/WEB-INF/ConfCommande.jsp";
@@ -48,7 +48,6 @@ public class ScCommande implements SousController {
         request.setAttribute("sandwichs", lesBurgers);
         request.setAttribute("noSandwich", lesBurgers.isEmpty());
         request.setAttribute("nbSandwichs", lesBurgers.size());
-        System.err.println(">>>>>> MES SANDWICHS = " + lesBurgers);
         
         List<Choix> lesAccomp = command.getChoixAccomp(lch);
         request.setAttribute("frites", lesAccomp);
@@ -89,8 +88,15 @@ public class ScCommande implements SousController {
         }
         if ("quit".equals(ref)) {
             session.removeAttribute("panier");
-            url = "/WEB-INF/Accueil.jsp";
+            url = "/WEB-INF/PrefSurPlace.jsp";
         }
+        
+        List<Commande> lesCom = command.recupererCommandesEnPrep();
+        for (Commande co : lesCom) {
+            co.setLesChoix(command.recupererChoixCommande(co.getId()));
+        }
+        request.setAttribute("comEnPrepa", lesCom);
+        System.out.println(">>>>>lescom = " + lesCom);
         
         return url;
     }

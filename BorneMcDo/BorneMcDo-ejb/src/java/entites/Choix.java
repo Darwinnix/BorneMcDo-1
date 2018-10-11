@@ -230,7 +230,7 @@ public class Choix implements Serializable {
 
     @Override
     public String toString() {
-        return "Choix n°" + id + ": Tva de " + tauxTva + "%, prix=" + prix + ", livraison=" + livraison;
+        return "Choix n°" + id + " " +  unArticle + " - " + prix + "€";
     }
 
     

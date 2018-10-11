@@ -532,11 +532,11 @@ public class CreationJeuEssai implements CreationJeuEssaiLocal {
         //Commande
         Commande cm1 = new Commande(d1, "CB01");
         c1.setUneCommande(cm1);
-        cm1.setUnStatus(enPreparation);
+        cm1.setUnStatus(delivree);
         cm1.setUnePreference(surPlace);
         Commande cm2 = new Commande (d2, "CB02");
         c2.setUneCommande(cm2);
-        cm2.setUnStatus(enPreparation);
+        cm2.setUnStatus(delivree);
         cm2.setUnePreference(emporter);
         Commande cm3 = new Commande(d3, "CB03");
         c3.setUneCommande(cm3);

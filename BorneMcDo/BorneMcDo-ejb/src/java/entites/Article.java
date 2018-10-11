@@ -251,7 +251,7 @@ public class Article implements Serializable {
 
     @Override
     public String toString() {
-        return "Article" + " n°" + id + " : " + nom + " (" + description + ") " + " " + prix + "€";
+        return "Article" + " n°" + id + " : " + nom + " - " + prix + "€";
     }
 
     

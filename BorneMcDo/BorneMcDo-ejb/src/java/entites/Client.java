@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+
 @Entity
 public class Client implements Serializable {
 
@@ -112,7 +113,5 @@ public class Client implements Serializable {
     public String toString() {
         return "Client n°" + numeroMembre + " : " + prenom + " " + nom + " pointsFidelite=" + pointsFidelite;
     }
-
-    
 
 }

@@ -10,28 +10,9 @@
         <title>Controle cuisine</title>
     </head>
     <body>
+        
         <div class="container-fluid">
-
-            <div id="comVide">${panierVide}</div>
-
-
-            <script src="jquery.js"></script>
-            <script>
-                jQuery.fn.center = function () {
-                    this.css("position", "absolute");
-                    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
-                            $(window).scrollTop()) + "px");
-                    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
-                            $(window).scrollLeft()) + "px");
-                    return this;
-                };
-
-                $(function () {
-                    $('#comVide').center();
-                });
-            </script>
-
-
+            <div class="comVide">${panierVide}</div>
             <div class="row test">
                 <c:forEach var="i" items="${comEnPrepa}" begin="0" end="9" step="1">
                     <div class="col-xs-10 col-sm-3 col-md-3 col-lg-3 control">
@@ -44,7 +25,7 @@
                             //<p class="suping"> sans oignon</p>
                             //<p class="suping">nappage chocolat</p>
                             //<p class="suping">sans cacahuète</p>
-%>
+                        %>
                         <div class="col-1 text-center boutonback">
                             <a class="btn btn-comlivre" href="Controller?section=ScCommande&ref=comLivree&comId=${i.id}">Commande livrée</a>
                         </div>

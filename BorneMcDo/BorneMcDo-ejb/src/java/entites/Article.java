@@ -253,7 +253,4 @@ public class Article implements Serializable {
     public String toString() {
         return "Article" + " n°" + id + " : " + nom + " - " + prix + "€";
     }
-
-    
-
 }

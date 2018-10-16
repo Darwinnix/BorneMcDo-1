@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+
 @Entity
 @NamedQueries({
     @NamedQuery(name = "entites.Commande.selectCommandeEnPrepa", query = "SELECT c from Commande c WHERE c.unStatus.libelle = 'en préparation'"),
@@ -142,7 +143,5 @@ public class Commande implements Serializable {
     public String toString() {
         return "Commande n° " + id + ", identifiantCourt=" + identifiantCourt + ", lesChoix=" + lesChoix;
     }
-
- 
-
+    
 }

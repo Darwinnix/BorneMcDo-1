@@ -358,3 +358,13 @@ p{
     left: 15%;
     bottom: 2%;
 }
+.comVide{
+    margin: 20px auto;
+    width: 800px;
+    height: auto;
+    padding-top: 20%;
+    font-size: 3em;
+    font-family: 'museo';
+    color: #004812;
+    
+}

@@ -133,7 +133,5 @@ public class InfoArticle implements Serializable {
     public String toString() {
         return "InfoArticle{" + "id=" + id + ", description=" + description + '}';
     }
-
     
-
 }

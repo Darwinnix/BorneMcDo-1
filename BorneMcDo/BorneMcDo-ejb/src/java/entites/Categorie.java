@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
     @NamedQuery(name = "entites.Categorie.selectAllCategorie", query ="select c from Categorie c")
 })
 public class Categorie implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     @Id
     private String nom;
     private String image;
@@ -91,5 +93,5 @@ public class Categorie implements Serializable {
     public String toString() {
         return "entites.Categorie[ id=" + nom + " ]";
     }
-
+    
 }

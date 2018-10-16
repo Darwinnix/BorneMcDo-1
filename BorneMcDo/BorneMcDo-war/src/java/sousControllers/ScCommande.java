@@ -18,12 +18,15 @@ import javax.servlet.http.HttpSession;
 
 public class ScCommande implements SousController {
 
+    GestionPanierLocal gestionPanier = lookupGestionPanierLocal();
+
     GestionCommandeLocal gestionCommande = lookupGestionCommandeLocal();
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String url = "/WEB-INF/ConfCommande.jsp";
         GestionCommandeLocal command = lookupGestionCommandeLocal();
+        GestionPanierLocal panier = lookupGestionPanierLocal();
         List<Commande> lc = command.recupererCommandesEnPrep();
         request.setAttribute("comEnPrepa", lc);
         HttpSession session = request.getSession();
@@ -42,16 +45,20 @@ public class ScCommande implements SousController {
             url = "/WEB-INF/EcranBack.jsp";
         }
 
-        GestionPanierLocal panier = (GestionPanierLocal) session.getAttribute("panier");
+        if (session.getAttribute("panier") == null) {
+            session.setAttribute("panier", panier);
+        } else {
+            panier = (GestionPanierLocal) session.getAttribute("panier");
+        }
 
         List<Choix> lch = new ArrayList();
-
-        if (panier.getMonPanier().isEmpty()) {
-            request.setAttribute("panierVide", "Aucune commande en cours");
-        } else {
-            lch = panier.getMonPanier();
-            request.setAttribute("panier", lch);
-        }
+//
+//        if (panier.getMonPanier().isEmpty()) {
+//            request.setAttribute("panierVide", "Aucune commande en cours");
+//        } else {
+        lch = panier.getMonPanier();
+        request.setAttribute("panier", lch);
+//        }
 
         List<Choix> lesBurgers = command.GetChoixBurger(lch);
         request.setAttribute("sandwichs", lesBurgers);
@@ -105,10 +112,14 @@ public class ScCommande implements SousController {
             co.setLesChoix(command.recupererChoixCommande(co.getId()));
         }
         request.setAttribute("comEnPrepa", lesCom);
+        if (lesCom.isEmpty()) {
+            request.setAttribute("panierVide", "Aucune commande en cours");
+        } else {
+            request.setAttribute("panierVide", "");
+        }
 
-        String comId = request.getParameter("comId");
         if ("comLivree".equals(ref)) {
-            command.updateCommandeLivree(Long.valueOf(comId));
+            command.updateCommandeLivree(Long.valueOf(request.getParameter("comId")));
             url = "/WEB-INF/EcranBack.jsp";
         }
 
@@ -119,6 +130,16 @@ public class ScCommande implements SousController {
         try {
             Context c = new InitialContext();
             return (GestionCommandeLocal) c.lookup("java:global/BorneMcDo/BorneMcDo-ejb/GestionCommande!ejb.GestionCommandeLocal");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
+    }
+
+    private GestionPanierLocal lookupGestionPanierLocal() {
+        try {
+            Context c = new InitialContext();
+            return (GestionPanierLocal) c.lookup("java:global/BorneMcDo/BorneMcDo-ejb/GestionPanier!ejb.GestionPanierLocal");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);

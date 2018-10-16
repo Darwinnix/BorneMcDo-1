@@ -59,12 +59,12 @@ public class GestionCommande implements GestionCommandeLocal {
     
     @Override
     public void updateCommandeLivree(Long comId){
-        Commande c = null;
-        Status s = null;
+        
+        
         Query q= em.createNamedQuery("entites.Status.selectStatusByLibelle");
-        c = em.find(Commande.class, comId);
+        Commande c = em.find(Commande.class, comId);
         q.setParameter("paramStatusLib", "délivrée au client");
-        s = (Status) q.getSingleResult();
+        Status s = (Status) q.getSingleResult();
         c.setUnStatus(s);
     }
 

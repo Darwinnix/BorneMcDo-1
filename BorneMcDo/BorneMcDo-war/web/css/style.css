@@ -262,7 +262,7 @@ p{
     position: absolute;
     background-color: #004812;
     color: white;
-    top: -7%;
+    top: -6%;
     text-transform: uppercase;
     font-family: 'museo';
     left: 0;
@@ -359,12 +359,14 @@ p{
     bottom: 2%;
 }
 .comVide{
+    display: flex;
+    align-content: center;
+    text-align: center;
     margin: 20px auto;
     width: 800px;
     height: auto;
     padding-top: 20%;
     font-size: 3em;
     font-family: 'museo';
-    color: #004812;
-    
+    color: #004812;   
 }

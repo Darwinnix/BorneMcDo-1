@@ -45,6 +45,7 @@ public class ScCommande implements SousController {
             url = "/WEB-INF/EcranBack.jsp";
         }
 
+
         if (session.getAttribute("panier") == null) {
             session.setAttribute("panier", panier);
         } else {

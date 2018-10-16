@@ -8,6 +8,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 @Stateless
@@ -47,5 +48,31 @@ public class GestionCatalogue implements GestionCatalogueLocal {
         qr.setParameter("paramSsCat", ssCat);
         List<Article> la = qr.getResultList();
         return la;
+    }
+    
+    @Override
+    public List<SousCategorie> getSousCategorieByMenu(String idMenu){
+        TypedQuery<SousCategorie> qr = em.createNamedQuery("entites.Menu.getSousCategorieByIdMenu", SousCategorie.class);
+        qr.setParameter("param", Integer.valueOf(idMenu));
+        List<SousCategorie> lsc = qr.getResultList();
+        return lsc;
+    }
+    
+    @Override
+    public boolean isArticleSuppArt (String idArt) {
+        Long id = Long.valueOf(idArt);
+        Query tq = em.createQuery("select a from Article a where a.id = :paramId");
+        tq.setParameter("paramId", id);
+        List<Article> la = tq.getResultList();
+        Article a = null;
+        for (Article art : la) {
+            a = art;
+        }
+        
+        if (a.getLesSupArt().isEmpty()) {
+            return false;
+        }
+        
+        return true;
     }
 }

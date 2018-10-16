@@ -89,7 +89,6 @@ public class GestionCommande implements GestionCommandeLocal {
                             panierBurger.add(c);
                         }
                     }
-
                 }
             }
         }

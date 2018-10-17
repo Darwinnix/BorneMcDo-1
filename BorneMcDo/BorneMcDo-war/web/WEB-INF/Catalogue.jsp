@@ -57,7 +57,6 @@
                 </div>
                 <!-- panier -->
                 <div class="col-3">
-                    <p>panier</p>
                     <div id="panier">
                         <c:url value="Controller?section=ScPanier" var="panier" />
                         <c:import url="${panier}"/>

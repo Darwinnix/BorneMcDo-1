@@ -379,3 +379,15 @@ p{
     font-family: 'museo';
     color: #004812;   
 }
+.panier-lat{
+    text-align: center;
+    border: solid 3px;
+    border-radius: 5px;
+    border-color: #004812;   
+}
+
+.enlever{
+    margin-left: 20px;
+    text-decoration: none;
+    
+}

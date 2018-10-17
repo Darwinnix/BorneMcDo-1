@@ -101,11 +101,16 @@ public class ScCommande implements SousController {
 
         if ("payOk".equals(ref)) {
             command.creerCommande(lch, idCourt, p);
-            url = "WEB-INF/CommandeOk.jsp";
+            url = "/WEB-INF/CommandeOk.jsp";
         }
         if ("quit".equals(ref)) {
             session.removeAttribute("panier");
-            url = "/WEB-INF/PrefSurPlace.jsp";
+            url = "/WEB-INF/Carousel.jsp";
+        }
+        
+        if ("comLivree".equals(ref)) {
+            command.updateCommandeLivree(Long.valueOf(request.getParameter("comId")));
+            url = "/WEB-INF/EcranBack.jsp";
         }
 
         List<Commande> lesCom = command.recupererCommandesEnPrep();
@@ -119,10 +124,7 @@ public class ScCommande implements SousController {
             request.setAttribute("panierVide", "");
         }
 
-        if ("comLivree".equals(ref)) {
-            command.updateCommandeLivree(Long.valueOf(request.getParameter("comId")));
-            url = "/WEB-INF/EcranBack.jsp";
-        }
+        
 
         return url;
     }
